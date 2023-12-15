@@ -2,22 +2,11 @@ package Array;
 import java.util.*;
 public class unique {
     public static int unique(int arr[]){
-         int count=0;
-        for(int i=0;i<arr.length-1;i++){
-           
-            for(int j=0;j<arr.length;j++){
-        if(arr[i]==arr[j]){
-            count++;
-         }
-            }
-        
-    
-    if(count>1){
-       return arr[i];
-    }
-}
-
-return -1;
+      int ans=0;
+      for(int i=0;i<arr.length;i++){
+        ans=ans^arr[i];
+      }
+  return ans;
     }
     public static void main(String args []){
         Scanner sc=new Scanner(System.in);
@@ -25,7 +14,8 @@ return -1;
         int t=sc.nextInt();
         while(t>0){
             System.out.println("Enter the size of the array");
-            int n=sc.nextInt();
+            int n=sc.nextInt();//size should [2m+1];
+            //IN this array m no.are present twice and only one no.are present once
             int arr[]=new int[n];
             for(int i=0;i<n;i++){
                 arr[i]=sc.nextInt();
